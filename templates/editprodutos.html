@@ -1,0 +1,39 @@
+{% extends 'modelo.html' %}
+{% block conteudo %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <form action="/editarprodutos" method="post" enctype="multipart/form-data" class="col-10 text-center">
+            <h1 class="my-3">Editar produto</h1>
+            {% for produto in produtos %}
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" name="nome_prod" id="nome_prod" class="form-control" value="{{produto['nome_prod']}}" required placeholder="" autofocus>
+                        <label for="nome_prod">Produto</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <textarea name="desc_prod" id="desc_prod" class="form-control" required placeholder="">{{produto['desc_prod']}}</textarea>
+                        <label for="desc_prod">Descrição</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">R$</span>
+                        <div class="form-floating">
+                            <input type="text" name="preco" id="preco" class="form-control" value="{{produto['preco']}}" required placeholder="">
+                            <label for="preco">Preço</label>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <input type="hidden" name="id_prod" value="{{produto['id_prod']}}">
+            {% endfor %}
+            <input type="submit" class="btn btn-lg btn-danger justify-content-center" value="Cadastrar">
+        </form>
+    </div>
+</div>
+{% endblock %}

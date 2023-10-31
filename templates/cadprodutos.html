@@ -1,0 +1,39 @@
+{% extends 'modelo.html' %}
+{% block conteudo %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <form action="/cadastro" method="post" enctype="multipart/form-data" class="col-sm-10 col-md-8 col-lg-6 text-center">
+            <h1 class="my-3">Cadastro de produtos</h1>
+        
+            <div class="form-floating mb-3">
+                <input type="text" name="nome_prod" id="nome_prod" class="form-control" required placeholder="" autofocus>
+                <label for="nome_prod">Nome do produto</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="desc_prod" id="desc_prod" class="form-control" required placeholder="" style="height: 100px"></textarea>
+                <label for="desc_prod">Descrição do produto</label>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">R$</span>
+                        <div class="form-floating">
+                            <input type="text" name="preco" id="preco" class="form-control" required placeholder="">
+                            <label for="preco">Preço do produto</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-7">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-file-image"></i></span>
+                        <div class="form-floating">
+                            <input type="file" name="imagem" id="imagem" accept="image/jpeg,image/png" required class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-lg btn-danger justify-content-center" value="Cadastrar">
+        </form>
+    </div>
+</div>
+{% endblock %}

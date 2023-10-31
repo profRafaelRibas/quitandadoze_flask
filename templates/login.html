@@ -1,0 +1,31 @@
+{% extends 'modelo.html' %}
+{% block conteudo %}
+<main class="flex-fill my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <form action="/acesso" method="post" class="text-center col-sm-10 col-md-8 col-lg-6">
+                <h1 class="mb-3">Identifique-se, por favor</h1>
+            
+                <div class="form-floating mb-3">
+                    <input type="text" name="usuario" id="usuario" class="form-control" placeholder="" autofocus>
+                    <label for="usuario">Usuário</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" name="senha" id="senha" class="form-control" placeholder="" autofocus>
+                    <label for="senha">Senha</label>
+                </div>
+                <div class="form-check mb-3 d-flex justify-content-start">
+                    <input type="checkbox" class="form-check-input border border-black border-1" name="" id="chklembrar">
+                    <label for="chkLembrar" class="form-check-label ms-3">Lembrar de mim</label>
+                </div>
+                <input type="submit" value="ACESSO" name="ACESSO"class="btn btn-lg btn-danger">
+                <p class="mt-3">
+                    Esqueceu sua senha? <a href="/recuperarsenha.html">Clique aqui</a> para se recuperá-la.
+                </p>
+            </form>
+        </div>
+    </div>
+ 
+    
+{% endblock %}

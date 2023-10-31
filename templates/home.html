@@ -1,0 +1,26 @@
+{% extends 'modelo.html' %}
+{% block conteudo %}
+<main class="flex-fill my-5">
+    
+    {% if not(produtos) %}
+        <h1>Não há produtos cadastrados</h1>
+        {% else %}
+        <div class="container">
+            <div class="row g-3">
+            {% for produto in produtos %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="card text-center bg-light">
+                        <img src="../static/img/produtos/{{produto['img']}}" class="card-img-top">
+                        <div class="card-header">R$ {{produto['preco']}}</div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{produto['nome_prod']}}</h5>
+                            <p class="card-text truncar-3l">{{produto['desc_prod']}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    
+{% endblock %}
